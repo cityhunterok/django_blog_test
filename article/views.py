@@ -4,11 +4,14 @@ from article.models import Article
 # Create your views here.
 from django.http import HttpResponse
 from datetime import datetime
+from django.http import Http404
+
 # Create your views here.
+
 '''
 def home(request):
     return HttpResponse("Hello World, Django")
-'''
+
 
 def detail(request, my_args):
     #return HttpResponse("You're looking at my_args %s." % my_args)
@@ -16,6 +19,13 @@ def detail(request, my_args):
     str = ("title = %s, category = %s, date_time = %s, content = %s" 
         % (post.title, post.category, post.date_time, post.content))
     return HttpResponse(str)
+'''
+def detail(request, id):
+    try:
+        post = Article.objects.get(id=str(id))
+    except Article.DoesNotExist:
+        raise Http404
+    return render(request, 'post.html', {'post' : post})
 
 
 def test(request) :
