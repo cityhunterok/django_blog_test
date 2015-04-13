@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
 encoding//article/models.py=utf8
+encoding//article/templatetags/custom_markdown.py=utf8
 encoding//article/views.py=utf8
 encoding//my_blog/settings.py=utf8
+encoding//my_blog/urls.py=utf8
+encoding//templates/base.html=UTF-8
+encoding/<project>=UTF-8

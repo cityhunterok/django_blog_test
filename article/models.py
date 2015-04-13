@@ -1,6 +1,6 @@
-#encoding:utf8
+#encoding:utf8    
 from django.db import models
-
+from django.core.urlresolvers import reverse
 # Create your models here.
 
 # Create your models here.
@@ -13,5 +13,16 @@ class Article(models.Model) :
     def __unicode__(self) :
         return self.title
 
+    #获取URL并转换成url的表示格式
+    def get_absolute_url(self):
+        path = reverse('detail', kwargs={'id':self.id})
+        print path
+        return "http://127.0.0.1:8000%s" % path
+
+
+
     class Meta:  #按时间下降排序
         ordering = ['-date_time']
+        
+        
+    

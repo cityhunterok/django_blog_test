@@ -20,4 +20,4 @@
         </section>
         {% include "duoshuo.html" %}
 </div><!-- /.blog-post -->
-{% endblock %}     
+{% endblock %}
